@@ -1,0 +1,14 @@
+.idea/
+.svn/
+target/
+*.iml
+**/.iml
+*.epoch
+*.log
+*.log.zip
+**/*.lck
+.settings
+.project
+.classpath
+
+
