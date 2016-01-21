@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:lang="http://www.springframework.org/schema/lang"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd 
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd 
+       http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang.xsd">
+
+   <!-- zk 配置中心 -->
+  <bean id="configManager" class="com.nonobank.config.zk.ZkConfigManager" init-method="init">
+  		<property name="host" value="172.16.4.76:2181,172.16.4.77:2181"></property>
+   </bean> 
+
+   <!-- 配置中心 注解 processor -->
+   <bean class="com.nonobank.config.spring.ConfigDataBeanProcessor">
+   		<property name="configManager" ref="configManager"/>
+   		<property name="groups" value="finance"></property>
+   </bean> 
+   
+   <bean id="groupData"  class="com.nonobank.config.GroupData"/>
+   
+   
+</beans>
