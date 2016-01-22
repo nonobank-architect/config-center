@@ -19,4 +19,11 @@ public class MainClient {
 		GroupData groupData = (GroupData)context.getBean("groupData");
 		System.out.println(groupData.getValue("A1"));
 	}
+	
+	@Test
+	public void test2() throws Exception{
+		
+		
+		System.in.read();
+	}
 }

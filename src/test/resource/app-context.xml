@@ -20,5 +20,5 @@
    
    <bean id="groupData"  class="com.nonobank.config.GroupData"/>
    
-   
+   <bean id="handler" class="com.nonobank.config.UserService"/>
 </beans>
